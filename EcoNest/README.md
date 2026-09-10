@@ -96,6 +96,13 @@ Used for:
 ### Google Fonts
 The project uses modern web typography to create a clean and professional visual appearance.
 
+👩‍💻 Developer Details
+Malaika Riaz Hussain
+BS Computer Science Student | Web Developer | AI Content Creator | Prompt Engineer
+📍 Location: Peshawar, Pakistan
+🎓 Developed as Part Of Internship Task At DecodeLabs (Task 01)
+💻 Focus Areas: Web Development, Artificial Intelligence, Machine Learning, Prompt Engineering & UI/UX
+
 ---
 
 ## 📂 Project Structure
