@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>COSMOS — Interactive Space Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         FULL SCREEN SOLAR SYSTEM BACKGROUND
+         ========================================= -->
+
+    <div class="space-background">
+
+        <video
+            class="solar-system-video"
+            autoplay
+            muted
+            loop
+            playsinline
+        >
+            <source
+                src="videos/solar-system.mp4"
+                type="video/mp4"
+            >
+
+            Your browser does not support video.
+        </video>
+
+        <div class="space-overlay"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         HEADER
+         ========================================= -->
+
+    <header class="site-header">
+
+        <a href="#" class="logo">
+            COSMOS
+        </a>
+
+        <nav class="main-nav">
+            <a href="#explorer">Explorer</a>
+            <a href="#archive">Archive</a>
+        </nav>
+
+        <button
+            class="mode-toggle"
+            id="modeToggle"
+            aria-label="Toggle visual mode"
+        >
+            <span>◐</span>
+        </button>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN
+         ========================================= -->
+
+    <main>
+
+
+        <!-- =====================================
+             EXPLORER
+             ===================================== -->
+
+        <section
+            class="explorer"
+            id="explorer"
+        >
+
+
+            <!-- Introduction -->
+
+            <div class="intro">
+
+                <span class="eyebrow">
+                    DEEP SPACE ARCHIVE
+                </span>
+
+                <h1>
+                    Explore<br>
+                    the <em>unknown.</em>
+                </h1>
+
+                <p id="planetDescription">
+                    A cold desert world shaped by ancient volcanoes,
+                    valleys, and vast dust storms.
+                </p>
+
+                <button
+                    class="explore-button"
+                    id="exploreButton"
+                >
+
+                    <span>
+                        Explore World
+                    </span>
+
+                    <span>
+                        ↗
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================
+                 CENTRAL SPACE VISUAL
+                 ================================= -->
+
+            <div class="planet-stage">
+
+                <div class="orbit orbit-one"></div>
+
+                <div class="orbit orbit-two"></div>
+
+                <div class="planet" id="planetVisual">
+
+                    <div class="planet-glow"></div>
+
+                </div>
+
+                <span
+                    class="planet-label"
+                    id="planetCounter"
+                >
+                    01 / 03
+                </span>
+
+            </div>
+
+
+            <!-- =================================
+                 PLANET INFORMATION
+                 ================================= -->
+
+            <aside class="planet-info">
+
+                <span class="info-label">
+                    CURRENT OBJECT
+                </span>
+
+
+                <h2 id="planetName">
+                    Mars
+                </h2>
+
+
+                <p
+                    id="planetTagline"
+                    class="planet-tagline"
+                >
+                    The Red Planet
+                </p>
+
+
+                <!-- Statistics -->
+
+                <div class="stats">
+
+                    <div class="stat">
+
+                        <span>
+                            Distance
+                        </span>
+
+                        <strong id="planetDistance">
+                            225M km
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>
+                            Temperature
+                        </span>
+
+                        <strong id="planetTemperature">
+                            −63°C
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>
+                            Moons
+                        </span>
+
+                        <strong id="planetMoons">
+                            2
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Favorite -->
+<button id="favoriteButton" class="favorite-button" type="button">
+    <span id="favoriteIcon">♡</span>
+    <span>Save to archive</span>
+</button>
+                
+
+            </aside>
+
+        </section>
+
+
+        <!-- =====================================
+             ARCHIVE
+             ===================================== -->
+
+        <section
+            class="archive"
+            id="archive"
+        >
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    SELECT DESTINATION
+                </span>
+
+                <h2>
+                    Choose a world.
+                </h2>
+
+            </div>
+
+
+            <!-- Planet Selector -->
+
+            <div class="planet-selector">
+
+
+                <!-- MARS -->
+
+                <button
+                    class="planet-card active"
+                    data-planet="mars"
+                >
+
+                    <span class="planet-number">
+                        01
+                    </span>
+
+                    <span class="planet-name">
+                        Mars
+                    </span>
+
+                    <span class="planet-arrow">
+                        ↗
+                    </span>
+
+                </button>
+
+
+                <!-- MOON -->
+
+                <button
+                    class="planet-card"
+                    data-planet="moon"
+                >
+
+                    <span class="planet-number">
+                        02
+                    </span>
+
+                    <span class="planet-name">
+                        Moon
+                    </span>
+
+                    <span class="planet-arrow">
+                        ↗
+                    </span>
+
+                </button>
+
+
+                <!-- TITAN -->
+
+                <button
+                    class="planet-card"
+                    data-planet="titan"
+                >
+
+                    <span class="planet-number">
+                        03
+                    </span>
+
+                    <span class="planet-name">
+                        Titan
+                    </span>
+
+                    <span class="planet-arrow">
+                        ↗
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+<!-- =====================================
+     PLANETARY DEEP DIVE
+     ===================================== -->
+
+<section class="deep-dive" id="deepDive">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">
+            PLANETARY INTELLIGENCE
+        </span>
+
+        <h2>
+            Go deeper.
+        </h2>
+
+        <p class="deep-dive-intro">
+            Explore the science, atmosphere, terrain,
+            and physical characteristics of this world.
+        </p>
+
+    </div>
+
+
+    <div class="deep-dive-grid">
+
+
+        <!-- Physical Properties -->
+
+        <article class="deep-card">
+
+            <span class="deep-card-number">
+                01
+            </span>
+
+            <span class="deep-card-label">
+                PHYSICAL
+            </span>
+
+            <h3>
+                Physical Properties
+            </h3>
+
+            <div class="deep-stat-list">
+
+                <div class="deep-stat">
+                    <span>Diameter</span>
+                    <strong id="deepDiameter">6,779 km</strong>
+                </div>
+
+                <div class="deep-stat">
+                    <span>Gravity</span>
+                    <strong id="deepGravity">3.71 m/s²</strong>
+                </div>
+
+                <div class="deep-stat">
+                    <span>Day Length</span>
+                    <strong id="deepDay">24h 37m</strong>
+                </div>
+
+                <div class="deep-stat">
+                    <span>Year Length</span>
+                    <strong id="deepYear">687 days</strong>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Atmosphere -->
+
+        <article class="deep-card">
+
+            <span class="deep-card-number">
+                02
+            </span>
+
+            <span class="deep-card-label">
+                ATMOSPHERE
+            </span>
+
+            <h3>
+                Atmosphere
+            </h3>
+
+            <p id="deepAtmosphere">
+                A thin atmosphere composed primarily
+                of carbon dioxide, with traces of nitrogen
+                and argon.
+            </p>
+
+        </article>
+
+
+        <!-- Surface -->
+
+        <article class="deep-card">
+
+            <span class="deep-card-number">
+                03
+            </span>
+
+            <span class="deep-card-label">
+                SURFACE
+            </span>
+
+            <h3>
+                Surface & Terrain
+            </h3>
+
+            <p id="deepSurface">
+                Rocky terrain, enormous volcanoes,
+                ancient valleys, impact craters,
+                and extensive dust plains.
+            </p>
+
+        </article>
+
+
+        <!-- Discovery -->
+
+        <article class="deep-card">
+
+            <span class="deep-card-number">
+                04
+            </span>
+
+            <span class="deep-card-label">
+                EXPLORATION
+            </span>
+
+            <h3>
+                Exploration
+            </h3>
+
+            <p id="deepExploration">
+                Mars has been explored by orbiters,
+                landers, and rovers, providing extensive
+                information about its geological history.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     MISSION ARCHIVE
+     ===================================== -->
+
+<section class="mission-archive" id="missions">
+
+    <div class="mission-heading">
+
+        <div>
+            <span class="eyebrow">
+                EXPLORATION LOG
+            </span>
+
+            <h2>
+                Mission Archive
+            </h2>
+        </div>
+
+        <p>
+            Explore the missions that have expanded
+            our understanding of this world.
+        </p>
+
+    </div>
+
+
+    <div class="mission-track" id="missionTrack">
+
+        <!-- Missions will be inserted dynamically -->
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     WORLD COMPARISON
+     ===================================== -->
+
+<section class="world-comparison" id="comparison">
+
+    <div class="comparison-heading">
+
+        <span class="eyebrow">
+            COMPARATIVE ANALYSIS
+        </span>
+
+        <h2>
+            Compare worlds.
+        </h2>
+
+        <p>
+            Place two worlds side by side and explore
+            how their physical characteristics differ.
+        </p>
+
+    </div>
+
+
+    <div class="comparison-controls">
+
+        <div class="compare-select">
+            <span>WORLD 01</span>
+
+            <select id="compareWorldOne">
+                <option value="mars">Mars</option>
+                <option value="moon">Moon</option>
+                <option value="titan">Titan</option>
+            </select>
+        </div>
+
+
+        <div class="compare-symbol">
+            VS
+        </div>
+
+
+        <div class="compare-select">
+            <span>WORLD 02</span>
+
+            <select id="compareWorldTwo">
+                <option value="moon">Moon</option>
+                <option value="mars">Mars</option>
+                <option value="titan">Titan</option>
+            </select>
+        </div>
+
+    </div>
+
+
+    <div class="comparison-table" id="comparisonTable">
+
+        <!-- Generated by JavaScript -->
+
+    </div>
+
+</section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer class="site-footer">
+
+        <span>
+            COSMOS / 2026
+        </span>
+
+        <span>
+            INTERACTIVE SPACE EXPLORER
+        </span>
+
+
+        <div class="navigation-controls">
+
+            <button
+                id="previousButton"
+                aria-label="Previous planet"
+            >
+                ←
+            </button>
+
+            <button
+                id="nextButton"
+                aria-label="Next planet"
+            >
+                →
+            </button>
+
+        </div>
+
+    </footer>
+
+<!-- =====================================
+     MISSION DETAIL PANEL
+     ===================================== -->
+
+<div class="mission-modal" id="missionModal">
+
+    <div class="mission-modal-backdrop" id="missionModalBackdrop"></div>
+
+    <div class="mission-modal-content">
+
+        <button
+            class="mission-modal-close"
+            id="missionModalClose"
+            type="button"
+        >
+            ×
+        </button>
+
+        <span class="eyebrow">
+            MISSION DETAIL
+        </span>
+
+        <span
+            class="mission-modal-status"
+            id="missionModalStatus"
+        >
+            ACTIVE
+        </span>
+
+        <h2 id="missionModalName">
+            Perseverance
+        </h2>
+
+        <div class="mission-modal-meta">
+
+            <span id="missionModalAgency">
+                NASA
+            </span>
+
+            <span id="missionModalYear">
+                2021
+            </span>
+
+        </div>
+
+        <div class="mission-modal-line"></div>
+
+        <p id="missionModalDescription">
+            A rover investigating the Martian surface,
+            ancient environments, and signs of past
+            microbial life.
+        </p>
+
+    </div>
+
+</div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
