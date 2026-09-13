@@ -4,7 +4,7 @@
 
 
 
-🔴 Live Demo: [Add your live project link here]
+🔴 Live Demo: [https://malaikariazhussainn-dev.github.io/Decodelabs-Internship/COSMOS/]
 
 
 ---
@@ -368,10 +368,10 @@ This project was developed as part of my Internship Task at Decode Labs.
 🔗 Connect
 
 Live Project:
-Add your live deployment link here
+[https://malaikariazhussainn-dev.github.io/Decodelabs-Internship/COSMOS/]
 
 GitHub:
-Add your GitHub profile/repository link here
+[https://github.com/malaikariazhussainn-dev/Decodelabs-Internship]
 
 
 ---
