@@ -11,14 +11,9 @@ Engineering the Architecture of Trust
 
 🌐 Live Demo
 
-🔗 Live Website: YOUR_LIVE_LINK_HERE
+🔗 Live Website: [https://malaikariazhussainn-dev.github.io/Decodelabs-Internship/Lumen/]
 
-🔗 GitHub Repository: YOUR_GITHUB_REPOSITORY_LINK_HERE
-
-> Replace the placeholders above with the deployed website and repository links.
-
-
-
+🔗 GitHub Repository: [https://github.com/malaikariazhussainn-dev/Decodelabs-Internship]
 
 ---
 
